@@ -13,7 +13,6 @@ export default class ModelDetails extends Component {
     }
 
     render() {
-        console.log(this.props.models)
         return (
             <div>
                 {this.props.models.map((model, index)=> (
