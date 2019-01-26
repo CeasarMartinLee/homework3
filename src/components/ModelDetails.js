@@ -2,9 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class ModelDetails extends Component {
-    static propTypes = {models: PropTypes.array.isRequired}
+    static propTypes = {
+        models: PropTypes.arrayOf(PropTypes
+        .shape({
+            name: PropTypes.string.isRequired,
+            manufacturer: PropTypes.string.isRequired,
+            year: PropTypes.number.isRequired,
+            origin: PropTypes.string.isRequired,
+        }))
+    }
 
     render() {
+        console.log(this.props.models)
         return (
             <div>
                 {this.props.models.map((model, index)=> (
